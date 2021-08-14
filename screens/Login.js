@@ -41,6 +41,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faEnvelope, faEye, faEyeSlash, faLock } from '@fortawesome/free-solid-svg-icons'
 import { Fontisto } from '@expo/vector-icons'
 
+// Keyboard avoiding view
+import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
+
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true);
   let [fontsLoaded] = useFonts({
@@ -54,86 +57,88 @@ const Login = () => {
     );
   } else {
     return (
-      <StyledContainer>
-        <InnerContainer>
-          <PageLogo resizeMode="cover" source={require('./../assets/img/chickenTinder.png')} />
-          <PageTitle style={{ fontFamily: "Asap_600SemiBold" }}>Chicken Tinder</PageTitle>
-          <SubTitle style={{ fontFamily: "Quicksand_700Bold" }}>Sign In</SubTitle>
+      <KeyboardAvoidingWrapper>
+        <StyledContainer>
+          <InnerContainer>
+            <PageLogo resizeMode="cover" source={require('./../assets/img/chickenTinder.png')} />
+            <PageTitle style={{ fontFamily: "Asap_600SemiBold" }}>Chicken Tinder</PageTitle>
+            <SubTitle style={{ fontFamily: "Quicksand_700Bold" }}>Sign In</SubTitle>
 
-          <Formik
-            initialValues={{ Email: '', Password: '' }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values }) => (
-              <StyledFormArea>
-                <UserTextInput
-                  label='Email'
-                  icon={faEnvelope}
-                  placeholder='example@email.com'
-                  placeholderTextColor={xandu}
-                  onChangeText={handleChange('email')}
-                  onBlur={handleBlur('email')}
-                  value={values.email}
-                  keyboardType='email-address'
-                />
+            <Formik
+              initialValues={{ Email: '', Password: '' }}
+              onSubmit={(values) => {
+                console.log(values);
+              }}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values }) => (
+                <StyledFormArea>
+                  <UserTextInput
+                    label='Email'
+                    icon={faEnvelope}
+                    placeholder='example@email.com'
+                    placeholderTextColor={xandu}
+                    onChangeText={handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
+                    keyboardType='email-address'
+                  />
 
-                <UserTextInput
-                  label='Password'
-                  icon={faLock}
-                  placeholder='**********'
-                  placeholderTextColor={xandu}
-                  onChangeText={handleChange('password')}
-                  onBlur={handleBlur('password')}
-                  value={values.password}
-                  secureTextEntry={hidePassword}
-                  isPassword={true}
-                  hidePassword={hidePassword}
-                  setHidePassword={setHidePassword}
-                  style={{ fontFamily: "Asap_600SemiBold" }}
-                />
-                <MsgBox>...</MsgBox>
-                <StyledButton onPress={handleSubmit}>
-                  <ButtonText style={{ fontFamily: "Asap_600SemiBold" }}>
-                    Sign In
-                  </ButtonText>
-                </StyledButton>
-                <StyledSocialsLabel>
-                  or use one of your social profiles
-                </StyledSocialsLabel>
-                <StyledSocialsContainer>
-                  <StyledButton google={true} onPress={handleSubmit}>
-                    <Fontisto name="google" color={cultured} size={25} />
-                    <ButtonText google={true} style={{ fontFamily: "Asap_600SemiBold" }}>
-                      Google
+                  <UserTextInput
+                    label='Password'
+                    icon={faLock}
+                    placeholder='**********'
+                    placeholderTextColor={xandu}
+                    onChangeText={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
+                    secureTextEntry={hidePassword}
+                    isPassword={true}
+                    hidePassword={hidePassword}
+                    setHidePassword={setHidePassword}
+                    style={{ fontFamily: "Asap_600SemiBold" }}
+                  />
+                  <MsgBox>...</MsgBox>
+                  <StyledButton onPress={handleSubmit}>
+                    <ButtonText style={{ fontFamily: "Asap_600SemiBold" }}>
+                      Sign In
                     </ButtonText>
                   </StyledButton>
-                  <StyledButton facebook={true} onPress={handleSubmit}>
-                    <Fontisto name="facebook" color={cultured} size={25} />
-                    <ButtonText facebook={true} style={{ fontFamily: "Asap_600SemiBold" }}>
-                      Facebook
-                    </ButtonText>
-                  </StyledButton>
-                </StyledSocialsContainer>
-                <ExtraView>
-                  <TextLink>
-                    <TextLinkContent style={{ fontFamily: "Asap_600SemiBold" }}>
-                      Forgot Password?
-                    </TextLinkContent>
-                  </TextLink>
-                  <TextLink>
-                    <TextLinkContent signup={true} style={{ fontFamily: "Asap_600SemiBold" }}>
-                      Sign Up
-                    </TextLinkContent>
-                  </TextLink>
-                </ExtraView>
-              </StyledFormArea>
-            )}
-          </Formik>
-        </InnerContainer>
-        <StatusBar style="auto" />
-      </StyledContainer>
+                  <StyledSocialsLabel>
+                    or use one of your social profiles
+                  </StyledSocialsLabel>
+                  <StyledSocialsContainer>
+                    <StyledButton google={true} onPress={handleSubmit}>
+                      <Fontisto name="google" color={cultured} size={25} />
+                      <ButtonText google={true} style={{ fontFamily: "Asap_600SemiBold" }}>
+                        Google
+                      </ButtonText>
+                    </StyledButton>
+                    <StyledButton facebook={true} onPress={handleSubmit}>
+                      <Fontisto name="facebook" color={cultured} size={25} />
+                      <ButtonText facebook={true} style={{ fontFamily: "Asap_600SemiBold" }}>
+                        Facebook
+                      </ButtonText>
+                    </StyledButton>
+                  </StyledSocialsContainer>
+                  <ExtraView>
+                    <TextLink>
+                      <TextLinkContent style={{ fontFamily: "Asap_600SemiBold" }}>
+                        Forgot Password?
+                      </TextLinkContent>
+                    </TextLink>
+                    <TextLink>
+                      <TextLinkContent signup={true} style={{ fontFamily: "Asap_600SemiBold" }}>
+                        Sign Up
+                      </TextLinkContent>
+                    </TextLink>
+                  </ExtraView>
+                </StyledFormArea>
+              )}
+            </Formik>
+          </InnerContainer>
+          <StatusBar style="auto" />
+        </StyledContainer>
+      </KeyboardAvoidingWrapper>
     );
   }
 }

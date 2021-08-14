@@ -141,6 +141,9 @@ export const ExtraView = styled.View`
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 0px;
+  ${(props) => props.signin === true && `
+  justify-content: center;
+`}
 `;
 
 export const TextLink = styled.TouchableOpacity`
@@ -154,7 +157,8 @@ export const TextLinkContent = styled.Text`
   font-size: 15px;
 
   color: ${xandu};
-  ${(props) => props.signup === true && `
+  ${(props) => (props.signup === true || props.signin === true) && `
     color: ${vividBurgundy};
+    padding: 0px 10px;
   `}
 `;
