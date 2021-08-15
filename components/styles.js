@@ -28,9 +28,26 @@ export const InnerContainer = styled.View`
   justify-content: center;
 `;
 
+export const WelcomeContainer = styled(InnerContainer)`
+  padding: 25px;
+  padding-top: 10px;
+  justify-content: center;
+`;
+
 export const PageLogo = styled.Image`
   height: 150px;
   width: 150px;
+`;
+
+export const Avatar = styled.Image`
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  border-radius: 75px;
+  border-width: 2px;
+  border-color: ${cultured};
+  margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
 export const PageTitle = styled.Text`
@@ -38,6 +55,10 @@ export const PageTitle = styled.Text`
   font-weight: bold;
   color: ${orangeRed};
   padding: 10px;
+
+  ${(props) => props.welcome && `
+  font-size: 32px;
+`}
 `;
 
 export const SubTitle = styled.Text`
@@ -47,6 +68,14 @@ export const SubTitle = styled.Text`
   margin-bottom: 20px;
   font-weight: bold;
   color: ${raisinBlack};
+
+  ${(props) => props.welcome && `
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    align-self: center;
+    padding-left: 0px;
+  `}
 `;
 
 export const StyledFormArea = styled.View`
