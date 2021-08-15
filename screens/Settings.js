@@ -1,30 +1,18 @@
 import AppLoading from 'expo-app-loading';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native'
 
 // Components
 import {
   Avatar,
   ButtonText,
   Colors,
-  ExtraView,
   InnerContainer,
-  LeftIcon,
-  MsgBox,
-  PageLogo,
   PageTitle,
-  RightIcon,
   StyledButton,
   StyledContainer,
   StyledFormArea,
-  StyledInputLabel,
-  StyledSocialsContainer,
-  StyledSocialsLabel,
-  StyledTextInput,
   SubTitle,
-  TextLink,
-  TextLinkContent,
   WelcomeContainer,
 } from './../components/styles'
 

@@ -1,7 +1,7 @@
 import AppLoading from 'expo-app-loading';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 // Components
 import {
@@ -27,7 +27,7 @@ import {
 } from './../components/styles'
 
 // Colors
-const { xandu, raisinBlack, cultured, google } = Colors;
+const { xandu, raisinBlack, cultured } = Colors;
 
 // Fonts
 import { useFonts, Asap_600SemiBold } from '@expo-google-fonts/asap';

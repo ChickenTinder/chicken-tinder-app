@@ -1,7 +1,7 @@
 import AppLoading from 'expo-app-loading';
-import React, { useState, setMounted, useReducer, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 // Components
 import {

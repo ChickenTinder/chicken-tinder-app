@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 // React Navigation Stack
-import RootStack from './navigators/RootStack';
+import RootTabs from './navigators/RootTabs';
 
 export default function App() {
   return (
-    <RootStack />
+    <RootTabs />
   );
 }

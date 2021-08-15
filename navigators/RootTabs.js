@@ -2,7 +2,7 @@ import AppLoading from 'expo-app-loading';
 import React from 'react';
 
 // Colors
-import { Colors } from './../components/styles';
+import { Colors } from '../components/styles';
 const { sunglow, vividBurgundy, orangeRed, cultured } = Colors;
 
 // Fonts
@@ -18,9 +18,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 // Screens
-import Login from './../screens/Login'
-import Settings from './../screens/Settings';
-import Signup from './../screens/Signup';
+import Login from '../screens/Login'
+import Settings from '../screens/Settings';
+import Signup from '../screens/Signup';
 
 const Tab = createBottomTabNavigator();
 
