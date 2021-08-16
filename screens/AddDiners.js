@@ -1,24 +1,20 @@
 import AppLoading from 'expo-app-loading';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 // Components
 import {
-  ButtonText,
   Colors,
+  DinerCard,
+  DinerName,
+  DinerUserName,
   ExtraView,
   InnerContainer,
   LeftIcon,
-  MsgBox,
-  RightIcon,
-  StyledButton,
-  StyledContainer,
   StyledContainerAlt,
   StyledFormArea,
   StyledInputLabel,
-  StyledSocialsContainer,
-  StyledSocialsLabel,
   StyledTextInput,
   SubTitle,
   TextLink,
@@ -26,10 +22,13 @@ import {
 } from './../components/styles'
 
 // Colors
-const { xandu, raisinBlack, cultured, sunglow } = Colors;
+const { xandu, raisinBlack } = Colors;
+
+// Dummy Data
+import DinerData from './DinerData'
 
 // Fonts
-import { useFonts, Asap_600SemiBold } from '@expo-google-fonts/asap';
+import { useFonts, Asap_600SemiBold, Asap_500Medium, Asap_400Regular } from '@expo-google-fonts/asap';
 import { Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
 // Formik
@@ -37,15 +36,13 @@ import { Formik } from 'formik';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faEye, faEyeSlash, faUser, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Fontisto } from '@expo/vector-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-// Keyboard avoiding view
-import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 
 const AddDiners = () => {
-  const [hidePassword, setHidePassword] = useState(true);
   let [fontsLoaded] = useFonts({
+    Asap_400Regular,
+    Asap_500Medium,
     Asap_600SemiBold,
     Quicksand_700Bold
   });
@@ -59,9 +56,9 @@ const AddDiners = () => {
       <StyledContainerAlt>
         <InnerContainer>
           <SubTitle style={{ fontFamily: "Quicksand_700Bold" }}>Add Diners</SubTitle>
-          <ExtraView signin={true}>
-            <TextLink>
-              <TextLinkContent signup={true} style={{ fontFamily: "Asap_600SemiBold" }}>
+          <ExtraView diner={true}>
+            <TextLink diner={true}>
+              <TextLinkContent diner={true} style={{ fontFamily: "Asap_600SemiBold" }}>
                 Cancel
               </TextLinkContent>
             </TextLink>
@@ -86,6 +83,18 @@ const AddDiners = () => {
               </StyledFormArea>
             )}
           </Formik>
+          <ScrollView>
+            {DinerData.map(diner => (
+              <DinerCard key={diner.id}>
+                <DinerName style={{ fontFamily: "Asap_500Medium" }}>
+                  {diner.name}
+                </DinerName>
+                <DinerUserName style={{ fontFamily: "Asap_400Regular" }}>
+                  @{diner.username}
+                </DinerUserName>
+              </DinerCard>
+            ))}
+          </ScrollView>
         </InnerContainer>
         <StatusBar style="auto" />
       </StyledContainerAlt >
@@ -93,7 +102,7 @@ const AddDiners = () => {
   }
 }
 
-const UserTextInput = ({ label, icon, isPassword, hidePassword, setHidePassword, ...props }) => {
+const UserTextInput = ({ label, icon, ...props }) => {
   return (
     <View>
       <LeftIcon>

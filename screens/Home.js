@@ -1,8 +1,6 @@
 import AppLoading from 'expo-app-loading';
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { View } from 'react-native';
-
 
 // Components
 import {

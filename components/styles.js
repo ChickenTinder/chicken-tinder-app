@@ -188,8 +188,12 @@ export const ExtraView = styled.View`
   justify-content: space-between;
   padding: 10px 0px;
   ${(props) => props.signin === true && `
-  justify-content: center;
-`}
+    justify-content: center;
+  `}
+
+  ${(props) => (props.diner === true) && `
+    align-self: flex-start;
+  `}
 `;
 
 export const TextLink = styled.TouchableOpacity`
@@ -201,9 +205,8 @@ export const TextLink = styled.TouchableOpacity`
 export const TextLinkContent = styled.Text`
   align-items: center;
   font-size: 15px;
-
   color: ${xandu};
-  ${(props) => (props.signup === true || props.signin === true) && `
+  ${(props) => (props.signup === true || props.signin === true || props.diner === true) && `
     color: ${vividBurgundy};
     padding: 0px 10px;
   `}
@@ -250,4 +253,21 @@ export const RestaurantStarImage = styled.Image`
   height: 100%;
   width: 25px;
   resize-mode: contain;
+`;
+
+export const DinerCard = styled.View`
+  border-bottom-color: ${xandu};
+  border-bottom-width: 2px;
+  margin-bottom: 10px;
+  width: 300px;
+`;
+export const DinerName = styled.Text`
+  color: ${raisinBlack};
+  font-size: 17px;
+`;
+
+export const DinerUserName = styled.Text`
+  color: ${xandu};
+  font-size: 14px;
+  margin-bottom: 5px;
 `;
