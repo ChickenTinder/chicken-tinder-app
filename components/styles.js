@@ -21,6 +21,10 @@ export const StyledContainer = styled.SafeAreaView`
   background-color: ${sunglow};
   align-items: center;
 `
+export const StyledContainerAlt = styled(StyledContainer)`
+  background-color: ${cultured}
+`;
+
 export const InnerContainer = styled.View`
   flex: 1;
   width: 90%
@@ -58,7 +62,7 @@ export const PageTitle = styled.Text`
 
   ${(props) => props.welcome && `
   font-size: 32px;
-`}
+  `}
 `;
 
 export const SubTitle = styled.Text`
@@ -190,4 +194,49 @@ export const TextLinkContent = styled.Text`
     color: ${vividBurgundy};
     padding: 0px 10px;
   `}
+`;
+
+export const RestaurantContainer = styled.View`
+  background-color: white;
+  width: 90%;
+  height: 300px;
+  border-radius: 5px;
+  align-items: center;
+`;
+
+export const RestaurantImage = styled.Image`
+height: 250px;
+width: 100%;
+flex-direction: column;
+margin: auto;
+border-radius: 5px;
+resize-mode: cover;
+`;
+
+export const RestaurantInfoContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const RestaurantInfoText = styled.Text`
+  color: ${raisinBlack};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+`;
+
+export const RestaurantStarContainer = styled.View`
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  flex-direction:row;
+  padding: 5px;
+  justify-content: space-around;
+`;
+
+export const RestaurantStarImage = styled.Image`
+  height: 100%;
+  width: 25px;
+  resize-mode: contain;
 `;

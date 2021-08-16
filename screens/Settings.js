@@ -38,7 +38,6 @@ const Settings = () => {
     return (
       <StyledContainer>
         <InnerContainer>
-
           <WelcomeContainer>
             <PageTitle welcome={true} style={{ fontFamily: "Asap_600SemiBold" }}>
               Settings

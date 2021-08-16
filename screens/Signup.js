@@ -176,7 +176,6 @@ const Signup = () => {
 const UserTextInput = ({ label, icon, isPassword, hidePassword, setHidePassword, ...props }) => {
   return (
     <View>
-
       <LeftIcon>
         <FontAwesomeIcon icon={icon} size={24} color={raisinBlack} />
       </LeftIcon>

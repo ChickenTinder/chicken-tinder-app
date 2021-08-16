@@ -10,7 +10,7 @@ import { useFonts, Asap_600SemiBold } from '@expo-google-fonts/asap';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faKey, faFileSignature, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faKey, faFileSignature, faCog, faHome } from '@fortawesome/free-solid-svg-icons'
 
 // React Navigation
 import { NavigationContainer } from '@react-navigation/native';
@@ -18,6 +18,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 // Screens
+import Home from '../screens/Home';
 import Login from '../screens/Login'
 import Settings from '../screens/Settings';
 import Signup from '../screens/Signup';
@@ -52,6 +53,9 @@ const RootTabs = () => {
                   case 'Settings':
                     iconName = faCog;
                     break;
+                  case 'Home':
+                    iconName = faHome;
+                    break;
                   default:
                     iconName = faKey;
                     break;
@@ -63,17 +67,28 @@ const RootTabs = () => {
               headerTransparent: true,
               headerTitle: '',
               tabBarStyle: {
+                flexDirection: 'row',
                 backgroundColor: sunglow,
+                alignItems: 'center',
+                paddingTop: 20,
+                height: 'auto',
+              },
+              tabBarItemStyle: {
+                alignItems: 'center',
+                marginTop: 5,
+                height: 45,
               },
               tabBarLabelStyle: {
                 fontFamily: "Asap_600SemiBold",
                 fontSize: 14,
+                paddingTop: 10,
               }
             })
           }
         >
           <Tab.Screen name='Login' component={Login} />
           <Tab.Screen name='Signup' component={Signup} />
+          <Tab.Screen name='Home' component={Home} />
           <Tab.Screen name='Settings' component={Settings} />
         </Tab.Navigator>
       </NavigationContainer >
