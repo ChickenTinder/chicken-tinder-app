@@ -10,7 +10,7 @@ import { useFonts, Asap_600SemiBold } from '@expo-google-fonts/asap';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faKey, faFileSignature, faCog, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faKey, faFileSignature, faCog, faHome, faDrumstickBite } from '@fortawesome/free-solid-svg-icons'
 
 // React Navigation
 import { NavigationContainer } from '@react-navigation/native';
@@ -22,6 +22,7 @@ import Home from '../screens/Home';
 import Login from '../screens/Login'
 import Settings from '../screens/Settings';
 import Signup from '../screens/Signup';
+import AddDiners from '../screens/AddDiners';
 
 const Tab = createBottomTabNavigator();
 
@@ -56,6 +57,9 @@ const RootTabs = () => {
                   case 'Home':
                     iconName = faHome;
                     break;
+                  case 'Match':
+                    iconName = faDrumstickBite;
+                    break;
                   default:
                     iconName = faKey;
                     break;
@@ -89,6 +93,7 @@ const RootTabs = () => {
           <Tab.Screen name='Login' component={Login} />
           <Tab.Screen name='Signup' component={Signup} />
           <Tab.Screen name='Home' component={Home} />
+          <Tab.Screen name='Match' component={AddDiners} />
           <Tab.Screen name='Settings' component={Settings} />
         </Tab.Navigator>
       </NavigationContainer >

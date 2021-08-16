@@ -10,11 +10,20 @@ import {
 
 import { Colors } from './styles';
 
-const { sunglow } = Colors;
+const { sunglow, cultured } = Colors;
 
 const KeyboardAvoidingWrapper = ({ children }) => {
   return (
-    <KeyboardAvoidingView style={{ flex: 1, flexDirection: "row", backgroundColor: sunglow, alignItems: "center" }}>
+    <KeyboardAvoidingView
+      style={
+        {
+          flex: 1,
+          flexDirection: "row",
+          backgroundColor: sunglow,
+          alignItems: "center"
+        }
+      }
+    >
       <ScrollView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           {children}

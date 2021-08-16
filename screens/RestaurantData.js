@@ -13,7 +13,7 @@ Seabirds Kitchen: https://unsplash.com/photos/IGfIGP5ONV0
 
 */
 
-const Data = [
+const RestaurantData = [
   {
     id: 1,
     name: "Jongewaard's Bake n Broil",
@@ -46,7 +46,7 @@ const Data = [
   },
   {
     id: 6,
-    name: "Joliza's Tcos",
+    name: "Joliza's Tacos",
     imageUrl: "https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
     rating: 5,
   },
@@ -76,5 +76,4 @@ const Data = [
   },
 ]
 
-
-export default Data;
+export default RestaurantData;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { SafeAreaView, View, Text, Image, TextInput, TouchableOpacity } from 'react'
 
+
 // colors
 export const Colors = {
   sunglow: "#ffcb47",
@@ -22,7 +23,8 @@ export const StyledContainer = styled.SafeAreaView`
   align-items: center;
 `
 export const StyledContainerAlt = styled(StyledContainer)`
-  background-color: ${cultured}
+  background-color: ${cultured};
+  align-items: center;
 `;
 
 export const InnerContainer = styled.View`
@@ -63,6 +65,13 @@ export const PageTitle = styled.Text`
   ${(props) => props.welcome && `
   font-size: 32px;
   `}
+
+  ${(props) => props.home && `
+  font-size: 32px;
+  padding-left: 25px;
+  align-self: flex-start;
+  color: ${raisinBlack}
+  `}
 `;
 
 export const SubTitle = styled.Text`
@@ -79,6 +88,10 @@ export const SubTitle = styled.Text`
     font-weight: normal;
     align-self: center;
     padding-left: 0px;
+  `}
+
+  ${(props) => props.home && `
+  font-size: 15px;
   `}
 `;
 
@@ -198,41 +211,39 @@ export const TextLinkContent = styled.Text`
 
 export const RestaurantContainer = styled.View`
   background-color: white;
-  width: 90%;
-  height: 300px;
+  height: auto;
   border-radius: 5px;
   align-items: center;
+  marginBottom: 15px;
 `;
 
 export const RestaurantImage = styled.Image`
 height: 250px;
 width: 100%;
-flex-direction: column;
-margin: auto;
 border-radius: 5px;
-resize-mode: cover;
 `;
 
 export const RestaurantInfoContainer = styled.View`
   flex-direction: row;
+  align-self: flex-start;
   justify-content: space-between;
+  width: 70%;
 `;
 
 export const RestaurantInfoText = styled.Text`
+  display: flex;
   color: ${raisinBlack};
   font-size: 14px;
   font-weight: bold;
-  padding: 15px;
-  text-align: center;
+  padding: 10px 0px;
+  align-self: flex-start;
 `;
 
 export const RestaurantStarContainer = styled.View`
-  flex: 1;
-  height: 100%;
+  width: 33%;
   align-items: center;
   flex-direction:row;
-  padding: 5px;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const RestaurantStarImage = styled.Image`
