@@ -44,7 +44,7 @@ const Settings = () => {
             <StyledFormArea>
               <Avatar
                 resizeMode="cover"
-                source={require("./../assets/img/chickenTinderAvatar.png")}
+                source={require("../../assets/img/chickenTinderAvatar.png")}
               />
               <StyledButton onPress={() => undefined}>
                 <ButtonText style={{ fontFamily: "Asap_600SemiBold" }}>Sign Out</ButtonText>

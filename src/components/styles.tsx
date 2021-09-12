@@ -119,7 +119,7 @@ export const StyledTextInput = styled.TextInput`
   border-bottom-width: 2px;
   font-size: 16px;
   height: 60px;
-  /* margin-vertical: 3px; */
+  margin-vertical: 3px;
   margin-bottom: 10px;
   color: ${raisinBlack};
 `;
@@ -156,7 +156,7 @@ export const StyledButton = styled.TouchableOpacity<StyledButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  /* margin-vertical: 10px; */
+  margin-vertical: 10px;
   height: 60px;
 
   ${(props) =>
@@ -257,7 +257,7 @@ export const RestaurantContainer = styled.View`
   height: auto;
   border-radius: 5px;
   align-items: center;
-  /* marginbottom: 15px; */
+  marginbottom: 15px;
 `;
 
 export const RestaurantImage = styled.Image`
@@ -292,7 +292,7 @@ export const RestaurantStarContainer = styled.View`
 export const RestaurantStarImage = styled.Image`
   height: 100%;
   width: 25px;
-  /* resize-mode: contain; */
+  resize-mode: contain;
 `;
 
 export const DinerCard = styled.View`
